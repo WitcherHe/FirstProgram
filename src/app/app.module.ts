@@ -10,6 +10,8 @@ import { RSidebarComponent } from './r-sidebar/r-sidebar.component';
 import { GundamManagementComponent } from './gundam-management/gundam-management.component';
 import { StarComponent } from './star/star.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
