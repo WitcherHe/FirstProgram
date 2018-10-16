@@ -7,6 +7,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 import { RSidebarComponent } from './r-sidebar/r-sidebar.component';
+import { GundamManagementComponent } from './gundam-management/gundam-management.component';
+import { StarComponent } from './star/star.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { RSidebarComponent } from './r-sidebar/r-sidebar.component';
     SidebarComponent,
     ContentComponent,
     FooterComponent,
-    RSidebarComponent
+    RSidebarComponent,
+    GundamManagementComponent,
+    StarComponent,
   ],
   imports: [
     BrowserModule
