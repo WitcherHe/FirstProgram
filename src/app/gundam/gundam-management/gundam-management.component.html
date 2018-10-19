@@ -17,12 +17,20 @@
   <!-- /.box-header -->
   <div class="box-body">
     <table class="table table-bordered">
+      <tr>
+        <th style="width: 10px">#</th>
+        <th>Gundam ID</th>
+        <th>Gundam Name</th>
+        <th>Price</th>
+        <th>Rate</th>
+        <th>Operation</th>
+      </tr>
       <tr *ngFor="let gundam of gundams">
         <th style="width: 10px">#</th>
         <th>{{gundam.id}}</th>
         <th>{{gundam.name}}</th>
         <th>{{gundam.price}}</th>
-        <th><app-star [rate]={gundam.rate}></app-star></th>
+        <th><app-star [rate]="gundam.rate"></app-star></th>
         <th>
           <a class="btn btn-warning btn-xs">
             <span class="glyphicon glyphicon-pencil"></span>

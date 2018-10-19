@@ -24,7 +24,9 @@ import { StarComponent } from './star/star.component';
     StarComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
