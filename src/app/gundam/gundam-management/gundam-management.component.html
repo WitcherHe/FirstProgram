@@ -26,12 +26,13 @@
         <th>Operation</th>
       </tr>
       <tr *ngFor="let gundam of gundams">
-        <th style="width: 10px">#</th>
-        <th>{{gundam.id}}</th>
-        <th>{{gundam.name}}</th>
-        <th>{{gundam.price}}</th>
-        <th><app-star [rate]="gundam.rate"></app-star></th>
-        <th>
+        <td style="width: 10px">#</td>
+        <td>{{gundam.id}}</td>
+        <td>{{gundam.name}}</td>
+        <td>{{gundam.price}}</td>
+        <td><app-star [rate]="gundam.rate"></app-star></td>
+        <td>
+          <div class="btn-group">
           <a class="btn btn-warning btn-xs">
             <span class="glyphicon glyphicon-pencil"></span>
             Modify
@@ -40,7 +41,8 @@
             <span class="glyphicon glyphicon-remove"></span>
             Delete
           </a>
-        </th>
+          </div>
+        </td>
       </tr>
     </table>
   </div>
