@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { GundamTagsComponent } from './gundam/gundam-tags/gundam-tags.component';
 
-const routes: Routes = [
+const routes : Routes = [
   {
-    path: '',
-    children: []
+    path: 'gundam', component: GundamTagsComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [
+    CommonModule
+  ],
+  declarations: []
 })
 export class AppRoutingModule { }

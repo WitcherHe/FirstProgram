@@ -11,6 +11,8 @@ import { FooterComponent } from './footer/footer.component';
 import { RSidebarComponent } from './r-sidebar/r-sidebar.component';
 import { GundamManagementComponent } from './gundam/gundam-management/gundam-management.component';
 import { StarComponent } from './star/star.component';
+import { GundamTagsComponent } from './gundam/gundam-tags/gundam-tags.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 
@@ -24,11 +26,13 @@ import { StarComponent } from './star/star.component';
     RSidebarComponent,
     GundamManagementComponent,
     StarComponent,
+    GundamTagsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
