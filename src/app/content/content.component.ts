@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from "@angular/router";
+import { filter } from 'rxjs/operators';//For rxjs 6.x version
+//import 'rxjs/add/operator/filter' for rxjs 5.x version 
 
 @Component({
   selector: 'app-content',
@@ -7,7 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+  private pageTitle = '';
+  private pageDesc = '';
+    
+  constructor(public router: Router) { 
+    //router 动态事件监控 - 当路由事件结束时，执行subscribe里的代码内容
+    router.events.pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event:NavigationEnd) => {
+        if(event.url == '/main'){
+          this.pageTitle = 'Main';
+          this.pageDesc = '';
+        }else if(event.url.startsWith('/gundam')){
+          this.pageTitle = 'Gundam List';
+          this.pageDesc = 'check your favour gundam';
+        }
+    })
+  }
 
   ngOnInit() {
   }

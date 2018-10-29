@@ -13,8 +13,14 @@ import { GundamManagementComponent } from './gundam/gundam-management/gundam-man
 import { StarComponent } from './star/star.component';
 import { GundamTagsComponent } from './gundam/gundam-tags/gundam-tags.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { MainComponent } from './main/main.component';
+import { RouterModule, Routes } from "@angular/router";
 
-
+const routes : Routes = [
+  { path: '', redirectTo: '/main', pathMatch: 'full' },
+  { path: 'main', component: MainComponent },
+  { path: 'gundam', component: GundamManagementComponent }
+];
 
 @NgModule({
   declarations: [
@@ -27,12 +33,14 @@ import { AppRoutingModule } from './/app-routing.module';
     GundamManagementComponent,
     StarComponent,
     GundamTagsComponent,
-  ],
+    MainComponent
+],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
