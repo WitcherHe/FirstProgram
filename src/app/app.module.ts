@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -11,6 +12,11 @@ import { GundamManagementComponent } from './gundam/gundam-management/gundam-man
 import { StarComponent } from './star/star.component';
 
 
+const routes: Routes = [
+  { path: '', redirectTo: '/content', pathMatch: 'full'},
+  { path: 'content', component: ContentComponent},
+  { path: 'gundam', component: GundamManagementComponent},
+];
 
 @NgModule({
   declarations: [
@@ -24,7 +30,8 @@ import { StarComponent } from './star/star.component';
     StarComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
