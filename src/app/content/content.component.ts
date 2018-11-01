@@ -15,7 +15,7 @@ export class ContentComponent implements OnInit {
     
   constructor(public router: Router) { 
     //router 动态事件监控 - 当路由事件结束时，执行subscribe里的代码内容
-    router.events.pipe(filter(event => event instanceof NavigationEnd))
+    router.events.pipe(filter(event => event instanceof NavigationEnd))//instanceof判断当前事件是否为NavigationEnd类型事件
       .subscribe((event:NavigationEnd) => {
         if(event.url == '/main'){
           this.pageTitle = 'Main';
