@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-gundam-management',
@@ -8,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class GundamManagementComponent implements OnInit {
 
   private gundams: Array<gundam>;
+  private url: string = "/main";
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
     this.gundams = [
@@ -18,6 +20,10 @@ export class GundamManagementComponent implements OnInit {
       new gundam("GF2-014NA", "GUNDAM FREEDOM", 120, 5.0, "GUNDAM FREEDOM is my favourite gundam", ["HG","RG"]),
       new gundam("ZGMF-X10A", "FREEDOM GUNDAM", 85, 4.8, "FREEDOM GUNDAM may be another version", ["HG","RG"]),
     ]
+  }
+
+  nav(url:string){
+    this.router.navigateByUrl(url);
   }
 
 }
